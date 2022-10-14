@@ -25,6 +25,16 @@
         tools:layout_editor_absoluteY="212dp" />
 
     <Button
+        android:id="@+id/btnShowPhrases2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:onClick="shareImages"
+        android:text="Compartir Imagen"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
         android:id="@+id/btnGoBackToInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
