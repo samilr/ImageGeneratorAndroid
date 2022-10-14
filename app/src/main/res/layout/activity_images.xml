@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnShowPersonalPhrases"
+        android:layout_marginTop="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ShowPersonalPhrases"
+        android:text="Ver Frases de Superacion Personal"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+    <Button
+        android:id="@+id/btnShowPhrases"
+        android:layout_marginTop="440dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ShowLifeRefletion"
+        android:text="Ver Reflexiones sobre la vida"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
+        android:id="@+id/btnGoBackToInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="640dp"
+        android:onClick="goToInfoActivityFromImg"
+        android:text="Volver atras"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
+        android:id="@+id/btnExitAppFromImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="680dp"
+        android:onClick="ExitAppFromUserImg"
+        android:text="Salir"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Hola, Samir"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgIMG"
+        android:layout_width="330dp"
+        android:layout_marginTop="120dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="35dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</FrameLayout>

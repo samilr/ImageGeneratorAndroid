@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnContinueImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:onClick="goToActivityImages"
+        android:text="Continuar"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
+        android:id="@+id/btnGoBackToMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="640dp"
+        android:onClick="goToMainActivity"
+        android:text="Volver atras"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
+        android:id="@+id/btnExitAppFromInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="680dp"
+        android:onClick="ExitAppFromUserInfo"
+        android:text="Salir"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:text="Cual es tu nombre?" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:textAlignment="center" />
+
+    <RadioGroup
+        android:id="@+id/rbgGender"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="120dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbHombre"
+            android:layout_width="100dp"
+            android:layout_height="26dp"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:id="@+id/rbMujer"
+            android:layout_width="100dp"
+            android:layout_height="26dp"
+            android:text="Mujer" />
+
+    </RadioGroup>
+
+
+</FrameLayout>
