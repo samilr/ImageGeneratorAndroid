@@ -20,11 +20,13 @@ import java.util.Random;
 
 public class Images extends AppCompatActivity {
     ImageView imgBack, imgExit;
-    TextView tvName;
+    TextView tvName, tvFrases;
     ImageView imgV, imgShare;
     FrameLayout flSuperacion, flPhrases;
-    String gender;
-    int[] menPhrases, womenPhrases, menRefletion, womenRefletion;
+    String gender, selectionCategory, txtSelected;
+    int[] menPhrases, womenPhrases;
+    String [] menRefletion, womenRefletion;
+
     int imgSelected;
     Random rand = new Random();
 
@@ -35,23 +37,42 @@ public class Images extends AppCompatActivity {
         component();
         getInfoFromUserInfo();
         imgShare.setVisibility(View.INVISIBLE);
+
+        tvFrases.setVisibility(View.INVISIBLE);
         imgV.setImageResource(R.drawable.predeterminada);
 
         menPhrases = new int[]{R.drawable.sh1, R.drawable.sh2, R.drawable.sh3, R.drawable.sh4, R.drawable.sh5, R.drawable.sh6, R.drawable.sh7, R.drawable.sh8, R.drawable.sh9, R.drawable.sh10};
         womenPhrases = new int[]{R.drawable.s1, R.drawable.s2, R.drawable.s3, R.drawable.s4, R.drawable.s5, R.drawable.s6, R.drawable.s7, R.drawable.s8, R.drawable.s9, R.drawable.s10};
-        menRefletion = new int[]{R.drawable.rh1, R.drawable.rh2, R.drawable.rh3, R.drawable.rh4,R.drawable.rh5,R.drawable.rh6, R.drawable.rh7,R.drawable.rh8,R.drawable.rh9, R.drawable.rh10};
-        womenRefletion = new int[]{R.drawable.r1, R.drawable.r2, R.drawable.r3, R.drawable.r11,R.drawable.r5,R.drawable.r6, R.drawable.r7,R.drawable.r8,R.drawable.r9, R.drawable.r10};
+        menRefletion = new String[]{"¿Sabes cual es el hombre perfecto? \n No es aquel que tiene musculos, ni dinero, ni carro. Si no aquel que hace todo lo posible por 'Verte sonreir'.",
+                                    "Es una reflexion penosa para un hombre considerar lo que ha hecho, comparado con lo que debio hacer.",
+                                    "Aveces lo mas dificil y lo correcto son la misma cosa.",
+                                    "Ellos se rien de mi por ser diferente, yo me rio de todos por ser iguales.",
+                                    "Los hombres mas arrogantes son los que generalmente estan equivocados, otorgan toda la pasion a sus puntos de vista sin una apropiada reflexion.",
+                                    "Es su naturaleza, no su posicion, lo que hace al hombre bueno.",
+                                    "Nuestro peor problema de comunicacion es que no escuchamos paar entender, si no que escuchamos para contestar.",
+                                    "Si caminas solo iras mas rapido, si caminas acompañado llegaras mas lejos.",
+                                    "Caerse mil veces y levantarse de nuevo, en eso consiste la vida."};
+
+        womenRefletion = new String[]{"¿Sabes cual es el hombre perfecto? \n No es aquel que tiene musculos, ni dinero, ni carro. Si no aquel que hace todo lo posible por 'Verte sonreir'.",
+                "Es una reflexion penosa para un hombre considerar lo que ha hecho, comparado con lo que debio hacer.",
+                "Aveces lo mas dificil y lo correcto son la misma cosa.",
+                "Ellos se rien de mi por ser diferente, yo me rio de todos por ser iguales.",
+                "Los hombres mas arrogantes son los que generalmente estan equivocados, otorgan toda la pasion a sus puntos de vista sin una apropiada reflexion.",
+                "Es su naturaleza, no su posicion, lo que hace al hombre bueno.",
+                "Nuestro peor problema de comunicacion es que no escuchamos paar entender, si no que escuchamos para contestar.",
+                "Si caminas solo iras mas rapido, si caminas acompañado llegaras mas lejos.",
+                "Caerse mil veces y levantarse de nuevo, en eso consiste la vida."};
     }
 
     public void component(){
         tvName = findViewById(R.id.tvName);
+        tvFrases = findViewById(R.id.tvFrases);
+        flPhrases = findViewById(R.id.flPhrases);
         imgV = findViewById(R.id.imgIMG);
         imgBack = findViewById(R.id.imgBack);
         imgExit = findViewById(R.id.imgExitApp);
-
         imgShare = findViewById(R.id.imgShare);
         flSuperacion = findViewById(R.id.flSuperacion);
-        flPhrases = findViewById(R.id.flPhrases);
     }
 
     public void getInfoFromUserInfo(){
@@ -63,15 +84,31 @@ public class Images extends AppCompatActivity {
     }
 
     public void shareImages(View view) {
-        Bitmap b = BitmapFactory.decodeResource(getResources(),imgSelected);
-        Intent share = new Intent(Intent.ACTION_SEND);
-        share.setType("image/jpeg");
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(getContentResolver(), b, "Frases para tu vida   ", null);
-        Uri imageUri =  Uri.parse(path);
-        share.putExtra(Intent.EXTRA_STREAM, imageUri);
-        startActivity(Intent.createChooser(share, "Select"));
+        //Compartir Texto
+        switch (selectionCategory) {
+            case "superacion":
+                Bitmap b = BitmapFactory.decodeResource(getResources(),imgSelected);
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("image/jpeg");
+                ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+                String path = MediaStore.Images.Media.insertImage(getContentResolver(), b, "Frases para tu vida", null);
+                Uri imageUri =  Uri.parse(path);
+                share.putExtra(Intent.EXTRA_STREAM, imageUri);
+                startActivity(Intent.createChooser(share, "Select"));
+                break;
+
+            case "reflexion":
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, txtSelected);
+                sendIntent.setType("text/plain");
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
+                break;
+            default:
+                imgV.setImageResource(R.drawable.sh1);
+        }
     }
 
     public void goToInfoActivityFromImg(View view) {
@@ -80,6 +117,10 @@ public class Images extends AppCompatActivity {
     }
 
     public void ShowPersonalPhrases(View view){
+        selectionCategory = "superacion";
+
+        tvFrases.setVisibility(View.INVISIBLE);
+        imgV.setVisibility(View.VISIBLE);
         imgShare.setVisibility(View.VISIBLE);
         switch (gender) {
             case "Hombre":
@@ -96,15 +137,19 @@ public class Images extends AppCompatActivity {
     }
 
     public void ShowLifeReflection(View view){
+        selectionCategory = "reflexion";
+
+        imgV.setVisibility(View.INVISIBLE);
+        tvFrases.setVisibility(View.VISIBLE);
         imgShare.setVisibility(View.VISIBLE);
         switch (gender) {
             case "Hombre":
-                imgSelected = menRefletion[rand.nextInt(menRefletion.length)];
-                imgV.setImageResource(imgSelected);
+                txtSelected =  menRefletion[rand.nextInt(menRefletion.length)];
+                tvFrases.setText(txtSelected);
                 break;
             case "Mujer":
-                imgSelected = womenRefletion[rand.nextInt(womenRefletion.length)];
-                imgV.setImageResource(imgSelected);
+                txtSelected = womenRefletion[rand.nextInt(womenRefletion.length)];
+                tvFrases.setText(txtSelected);
                 break;
             default:
                 imgV.setImageResource(R.drawable.sh1);
