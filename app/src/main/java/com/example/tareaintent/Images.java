@@ -19,7 +19,6 @@ import java.io.ByteArrayOutputStream;
 import java.util.Random;
 
 public class Images extends AppCompatActivity {
-    Button btnShowReflexion, btnShowPersonalSuperation;
     ImageView imgBack, imgExit;
     TextView tvName;
     ImageView imgV, imgShare;
@@ -116,8 +115,7 @@ public class Images extends AppCompatActivity {
         builder.setMessage("Estas seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Images.this.finish();
-                        System.exit(0);
+                        finishAffinity();
                     }
                 }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

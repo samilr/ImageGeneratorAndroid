@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("Estas seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        MainActivity.this.finish();
-                        System.exit(0);
+                        finishAffinity();
                     }
                 }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

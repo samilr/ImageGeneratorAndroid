@@ -8,14 +8,35 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="607dp"
         android:background="@color/red">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:text="¡BIENVENIDO!"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="50dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:text="SAMIR GONZALEZ 2019-8341"
+            android:layout_marginTop="480dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="40dp">
+        </TextView>
+
         <ImageView
             android:id="@+id/imgFrase"
             android:layout_width="408dp"
-            android:layout_height="380dp"
+            android:layout_height="371dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="90dp"
             app:srcCompat="@drawable/frase" />
     </FrameLayout>
 

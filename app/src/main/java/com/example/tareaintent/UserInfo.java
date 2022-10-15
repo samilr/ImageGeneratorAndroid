@@ -12,9 +12,9 @@ import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.IntentCompat;
 
 public class UserInfo extends AppCompatActivity {
-    Button btnContinueImages, btnExitAppFromUserInfo, btnGoBackToMain;
     RadioGroup rbgGender;
     RadioButton rbGender;
     EditText txtName;
@@ -26,6 +26,7 @@ public class UserInfo extends AppCompatActivity {
         setContentView(R.layout.activity_user_info);
         component();
     }
+
     public void component(){
         txtName = findViewById(R.id.txtName);
         rbgGender = findViewById(R.id.rbgGender);
@@ -33,29 +34,35 @@ public class UserInfo extends AppCompatActivity {
         imgBack = findViewById(R.id.imgBack);
         imgExit = findViewById(R.id.imgExitApp);
     }
+
     public void goToActivityImages(View view) {
         String nombre = txtName.getText().toString();
         int gender = rbgGender.getCheckedRadioButtonId();
         rbGender = findViewById(gender);
         String genderSelected = rbGender.getText().toString();
 
+        if (txtName.getText().length() < 1){
+            txtName.setText("ERROR");
+        }
+        else {
             Intent intent = new Intent(this, Images.class);
             intent.putExtra("gender",genderSelected);
             intent.putExtra("nombre",nombre);
             startActivity(intent);
-
+        }
     }
+
     public void goToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
     public void ExitAppFromUserInfo(View view) {
         final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Estas seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        UserInfo.this.finish();
-                        System.exit(0);
+                        finishAffinity();
                     }
                 }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
