@@ -8,37 +8,40 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="607dp"
+        android:layout_height="107dp"
         android:background="@color/red">
 
         <TextView
             android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
             android:layout_height="113dp"
             android:text="¡BIENVENIDO!"
-            android:layout_marginTop="20dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="50dp">
         </TextView>
 
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="140dp"
+        android:layout_height="470dp"
+        android:background="@color/red">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="113dp"
-            android:text="SAMIR GONZALEZ 2019-8341"
-            android:layout_marginTop="480dp"
+            android:layout_height="wrap_content"
+            android:text="Creamos esta aplicacion para que puedas encontrar frases de superacion personal o reflefexiones de vida. \n\n Obtendras una frase o reflexion basada en tu genero. \n\n ¡Esperamos que sea de gran ayuda!"
+            android:layout_marginTop="20dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="40dp">
-        </TextView>
-
-        <ImageView
-            android:id="@+id/imgFrase"
-            android:layout_width="408dp"
-            android:layout_height="371dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="90dp"
-            app:srcCompat="@drawable/frase" />
+            android:textSize="30dp"></TextView>
     </FrameLayout>
+
+
 
 
 

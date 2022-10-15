@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,10 +47,11 @@ public class UserInfo extends AppCompatActivity {
             String genderSelected = rbGender.getText().toString();
             Intent intent = new Intent(this, Images.class);
             intent.putExtra("gender",genderSelected);
-            intent.putExtra("nombre","Hola,"+nombre);
+            intent.putExtra("nombre","Hola, "+nombre);
             startActivity(intent);
         } else {
-            txtName.setText("");
+            Toast.makeText(this, "Complete todos los campos",
+                    Toast.LENGTH_LONG).show();
         }
     }
 
