@@ -37,7 +37,6 @@ public class Images extends AppCompatActivity {
         component();
         getInfoFromUserInfo();
         imgShare.setVisibility(View.INVISIBLE);
-
         tvFrases.setVisibility(View.INVISIBLE);
         imgV.setImageResource(R.drawable.predeterminada);
 
@@ -75,14 +74,13 @@ public class Images extends AppCompatActivity {
 
     public void getInfoFromUserInfo(){
         Bundle getName = getIntent().getExtras();
-        tvName.setText("Hola, "+ getName.getString("nombre"));
+        tvName.setText(getName.getString("nombre"));
 
         Bundle getGender = getIntent().getExtras();
         gender = getGender.getString("gender");
     }
 
     public void shareImages(View view) {
-        //Compartir Texto
         switch (selectionCategory) {
             case "superacion":
                 Bitmap b = BitmapFactory.decodeResource(getResources(),imgSelected);
@@ -154,8 +152,9 @@ public class Images extends AppCompatActivity {
         }
     }
 
-    public void ExitAppFromUserImg(View view) {        final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Estas seguro que quieres salir?")
+    public void ExitAppFromUserImg(View view) {
+        final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("¿Estas seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finishAffinity();

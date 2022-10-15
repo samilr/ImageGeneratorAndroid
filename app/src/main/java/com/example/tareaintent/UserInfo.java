@@ -16,7 +16,7 @@ import androidx.core.content.IntentCompat;
 
 public class UserInfo extends AppCompatActivity {
     RadioGroup rbgGender;
-    RadioButton rbGender;
+    RadioButton rbGender, rbMen, rbWomen;
     EditText txtName;
     ImageView imgContinue, imgBack, imgExit;
 
@@ -30,6 +30,8 @@ public class UserInfo extends AppCompatActivity {
     public void component(){
         txtName = findViewById(R.id.txtName);
         rbgGender = findViewById(R.id.rbgGender);
+        rbWomen = findViewById(R.id.rbMujer);
+        rbMen = findViewById(R.id.rbHombre);
         imgContinue = findViewById(R.id.imgContinue);
         imgBack = findViewById(R.id.imgBack);
         imgExit = findViewById(R.id.imgExitApp);
@@ -37,18 +39,17 @@ public class UserInfo extends AppCompatActivity {
 
     public void goToActivityImages(View view) {
         String nombre = txtName.getText().toString();
-        int gender = rbgGender.getCheckedRadioButtonId();
-        rbGender = findViewById(gender);
-        String genderSelected = rbGender.getText().toString();
 
-        if (txtName.getText().length() < 1){
-            txtName.setText("ERROR");
-        }
-        else {
+        if ((nombre.length() >= 1 && rbMen.isChecked()) || (nombre.length() >= 1 && rbWomen.isChecked())){
+            int gender = rbgGender.getCheckedRadioButtonId();
+            rbGender = findViewById(gender);
+            String genderSelected = rbGender.getText().toString();
             Intent intent = new Intent(this, Images.class);
             intent.putExtra("gender",genderSelected);
-            intent.putExtra("nombre",nombre);
+            intent.putExtra("nombre","Hola,"+nombre);
             startActivity(intent);
+        } else {
+            txtName.setText("");
         }
     }
 
@@ -59,7 +60,7 @@ public class UserInfo extends AppCompatActivity {
 
     public void ExitAppFromUserInfo(View view) {
         final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Estas seguro que quieres salir?")
+        builder.setMessage("¿Estas seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finishAffinity();

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void exitApp(View view) {
         final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Estas seguro que quieres salir?")
+        builder.setMessage("¿Estas seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finishAffinity();
