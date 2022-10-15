@@ -53,15 +53,13 @@ public class Images extends AppCompatActivity {
                                     "Si caminas solo iras mas rapido, si caminas acompañado llegaras mas lejos.",
                                     "Caerse mil veces y levantarse de nuevo, en eso consiste la vida."};
 
-        womenRefletion = new String[]{"¿Sabes cual es el hombre perfecto? \n No es aquel que tiene musculos, ni dinero, ni carro. Si no aquel que hace todo lo posible por 'Verte sonreir'.",
-                "Es una reflexion penosa para un hombre considerar lo que ha hecho, comparado con lo que debio hacer.",
-                "Aveces lo mas dificil y lo correcto son la misma cosa.",
-                "Ellos se rien de mi por ser diferente, yo me rio de todos por ser iguales.",
-                "Los hombres mas arrogantes son los que generalmente estan equivocados, otorgan toda la pasion a sus puntos de vista sin una apropiada reflexion.",
-                "Es su naturaleza, no su posicion, lo que hace al hombre bueno.",
-                "Nuestro peor problema de comunicacion es que no escuchamos paar entender, si no que escuchamos para contestar.",
-                "Si caminas solo iras mas rapido, si caminas acompañado llegaras mas lejos.",
-                "Caerse mil veces y levantarse de nuevo, en eso consiste la vida."};
+        womenRefletion = new String[]{"No es de quien te dice princesa, si no de quien te trata como una.",
+                                        "En el proceso de la violencia es mas importante que recuerdes que los malos maltratos cada vez seran mas frecuentes, mas intentos y peligrosos.",
+                                        "Las mujeres son la mitad de la sociedad que da a luz a la otra mitad, por lo que es comos si fueran la sociedad entera.",
+                                        "La mujer es mucho mas que un genero, esta llena de desafios.",
+                                        "Las mujeres inteligentes y fuertes no usan la venganza, solo esperan a que el tiempo pase para ver aquellos que le han hecho daño.",
+                                        "Amiga, que brilles hoy mas que ayer, con el resplandor de tus buenas acciones.",
+                                        "Bendita las mujeres que el diario caminar hacen de un grito de libertad. De amor y esperanza."};
     }
 
     public void component(){

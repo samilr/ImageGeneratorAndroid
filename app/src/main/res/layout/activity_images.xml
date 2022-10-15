@@ -65,16 +65,21 @@
 
 
 
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/red">
     <TextView
         android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Hola, Samir"
-        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:text="¡Hola, Samir!"
+        android:textColor="@color/white"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="40dp" />
+
+    </FrameLayout>
 
 
     <ImageView
