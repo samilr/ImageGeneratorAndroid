@@ -48,7 +48,7 @@ public class Images extends AppCompatActivity {
                                     "Ellos se rien de mi por ser diferente, yo me rio de todos por ser iguales.",
                                     "Los hombres mas arrogantes son los que generalmente estan equivocados, otorgan toda la pasion a sus puntos de vista sin una apropiada reflexion.",
                                     "Es su naturaleza, no su posicion, lo que hace al hombre bueno.",
-                                    "Nuestro peor problema de comunicacion es que no escuchamos paar entender, si no que escuchamos para contestar.",
+                                    "Nuestro peor problema de comunicacion es que no escuchamos parr entender, si no que escuchamos para contestar.",
                                     "Si caminas solo iras mas rapido, si caminas acompañado llegaras mas lejos.",
                                     "Caerse mil veces y levantarse de nuevo, en eso consiste la vida."};
 

@@ -7,8 +7,8 @@
 
     <FrameLayout
         android:id="@+id/flSuperacion"
-        android:layout_width="172dp"
-        android:layout_height="169dp"
+        android:layout_width="148dp"
+        android:layout_height="142dp"
         android:layout_marginTop="450dp"
         android:background="@color/red"
         android:layout_marginLeft="20dp"
@@ -16,48 +16,47 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_marginTop="110dp"
             android:layout_height="50dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="sans-serif-medium"
             android:text="SUPERACION PERSONAL"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20dp">
+            android:textSize="17dp">
         </TextView>
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="79dp"
+            android:layout_height="86dp"
             android:layout_marginLeft="32dp"
             app:srcCompat="@drawable/gallery" />
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/flPhrases"
-        android:layout_width="172dp"
-        android:layout_height="169dp"
+        android:layout_width="148dp"
+        android:layout_height="142dp"
+        android:layout_marginLeft="215dp"
         android:layout_marginTop="450dp"
         android:background="@color/red"
-        android:layout_marginLeft="220dp"
         android:onClick="ShowLifeReflection">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_marginTop="110dp"
             android:layout_height="50dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="sans-serif-medium"
             android:text="REFLEXIONES
              DE VIDA"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20dp">
-        </TextView>
+            android:textSize="17dp"></TextView>
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="69dp"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="15dp"
             app:srcCompat="@drawable/text" />
@@ -69,15 +68,16 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/red">
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="¡Hola, Samir!"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="392dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="¡Hola, Samir!"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
 
     </FrameLayout>
 
@@ -87,7 +87,7 @@
         android:layout_width="330dp"
         android:layout_height="250dp"
         android:layout_marginTop="120dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="25dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <FrameLayout
@@ -108,7 +108,7 @@
             android:id="@+id/imgExitApp"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="155dp"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:onClick="ExitAppFromUserImg"
@@ -127,9 +127,9 @@
 
     <TextView
         android:id="@+id/tvFrases"
-        android:layout_width="330dp"
+        android:layout_width="331dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="120dp"
         android:fontFamily="sans-serif-medium"
         android:text="TextView"

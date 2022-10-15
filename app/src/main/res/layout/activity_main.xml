@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
             android:text="Creamos esta aplicacion para que puedas encontrar frases de superacion personal o reflefexiones de vida. \n\n Obtendras una frase o reflexion basada en tu genero. \n\n ¡Esperamos que sea de gran ayuda!"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -56,7 +56,7 @@
             android:id="@+id/imgContinue"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="330dp"
+            android:layout_marginLeft="305dp"
             android:layout_weight="1"
             android:onClick="goToActivityUserInfo"
             app:srcCompat="@drawable/right" />

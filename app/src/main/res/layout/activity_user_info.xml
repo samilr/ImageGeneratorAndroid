@@ -6,25 +6,25 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="384dp"
         android:layout_height="100dp"
         android:background="@color/red">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="¡Queremos conocerte!"
-            android:textSize="35dp"
-            android:layout_marginLeft="30dp"
+            android:textAlignment="center"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white">
-        </TextView>
+            android:text="¡Queremos conocerte!"
+            android:textColor="@color/white"
+            android:textSize="35dp"></TextView>
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="526dp"
-        android:layout_marginTop="110dp">
+        android:layout_height="566dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="25dp">
 
         <TextView
             android:id="@+id/textView"
@@ -49,6 +49,7 @@
             android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="50dp"
             android:textAlignment="center" />
 
@@ -56,7 +57,7 @@
             android:id="@+id/imageView"
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="220dp"
             app:srcCompat="@drawable/menwomen" />
 
@@ -64,7 +65,7 @@
             android:id="@+id/rbgGender"
             android:layout_width="268dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="75dp"
             android:layout_marginTop="430dp"
             android:orientation="horizontal">
 
@@ -97,7 +98,7 @@
             android:id="@+id/imgContinue"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="330dp"
+            android:layout_marginLeft="305dp"
             android:layout_weight="1"
             android:onClick="goToActivityImages"
             app:srcCompat="@drawable/right" />
@@ -114,7 +115,7 @@
             android:id="@+id/imgExitApp"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="155dp"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:onClick="ExitAppFromUserInfo"
