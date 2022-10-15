@@ -6,23 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnExit"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="680dp"
-        android:onClick="exitApp"
-        android:text="Salir"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
-    <Button
-        android:id="@+id/btnContinue"
+        android:layout_height="400dp"
+        android:background="@color/red">
+        <ImageView
+            android:id="@+id/imgFrase"
+            android:layout_width="408dp"
+            android:layout_height="380dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/frase" />
+    </FrameLayout>
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginTop="640dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToActivityUserInfo"
-        android:text="Continuar"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+        android:background="@color/red">
+
+        <ImageView
+            android:id="@+id/imgContinue"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="330dp"
+            android:layout_weight="1"
+            android:onClick="goToActivityUserInfo"
+            app:srcCompat="@drawable/right" />
+
+
+
+        <ImageView
+            android:id="@+id/imgExitApp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:onClick="exitApp"
+            app:srcCompat="@drawable/x" />
+
+    </FrameLayout>
 
 </FrameLayout>

@@ -5,54 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnShowPersonalPhrases"
-        android:layout_marginTop="400dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="ShowPersonalPhrases"
-        android:text="Ver Frases de Superacion Personal"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
-    <Button
-        android:id="@+id/btnShowPhrases"
-        android:layout_marginTop="440dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="ShowLifeRefletion"
-        android:text="Ver Reflexiones sobre la vida"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+    <FrameLayout
+        android:id="@+id/flSuperacion"
+        android:layout_width="172dp"
+        android:layout_height="169dp"
+        android:layout_marginTop="450dp"
+        android:background="@color/red"
+        android:layout_marginLeft="20dp"
+        android:onClick="ShowPersonalPhrases">
 
-    <Button
-        android:id="@+id/btnShowPhrases2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
-        android:onClick="shareImages"
-        android:text="Compartir Imagen"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="110dp"
+            android:layout_height="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="SUPERACION PERSONAL"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </TextView>
 
-    <Button
-        android:id="@+id/btnGoBackToInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="640dp"
-        android:onClick="goToInfoActivityFromImg"
-        android:text="Volver atras"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="32dp"
+            app:srcCompat="@drawable/gallery" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/btnExitAppFromImg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="680dp"
-        android:onClick="ExitAppFromUserImg"
-        android:text="Salir"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+    <FrameLayout
+        android:id="@+id/flPhrases"
+        android:layout_width="172dp"
+        android:layout_height="169dp"
+        android:layout_marginTop="450dp"
+        android:background="@color/red"
+        android:layout_marginLeft="220dp"
+        android:onClick="ShowLifeReflection">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="110dp"
+            android:layout_height="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="REFLEXIONES
+             DE VIDA"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="32dp"
+            app:srcCompat="@drawable/gallery" />
+    </FrameLayout>
+
+
+
 
     <TextView
         android:id="@+id/tvName"
@@ -60,12 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Hola, Samir"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="30dp" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/imgIMG"
@@ -74,5 +83,40 @@
         android:layout_height="250dp"
         android:layout_marginLeft="35dp"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="640dp"
+        android:background="@color/red">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="goToInfoActivityFromImg"
+            app:srcCompat="@drawable/left" />
+
+        <ImageView
+            android:id="@+id/imgExitApp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:onClick="ExitAppFromUserImg"
+            app:srcCompat="@drawable/x" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imgShare"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginLeft="175dp"
+        android:onClick="shareImages"
+        app:srcCompat="@drawable/sharebutton" />
 
 </FrameLayout>

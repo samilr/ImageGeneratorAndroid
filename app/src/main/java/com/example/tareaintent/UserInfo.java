@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -17,6 +18,7 @@ public class UserInfo extends AppCompatActivity {
     RadioGroup rbgGender;
     RadioButton rbGender;
     EditText txtName;
+    ImageView imgContinue, imgBack, imgExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +27,11 @@ public class UserInfo extends AppCompatActivity {
         component();
     }
     public void component(){
-        btnContinueImages = findViewById(R.id.btnContinueImg);
-        btnGoBackToMain = findViewById(R.id.btnGoBackToMain);
-        btnExitAppFromUserInfo = findViewById(R.id.btnExitAppFromInfo);
         txtName = findViewById(R.id.txtName);
         rbgGender = findViewById(R.id.rbgGender);
+        imgContinue = findViewById(R.id.imgContinue);
+        imgBack = findViewById(R.id.imgBack);
+        imgExit = findViewById(R.id.imgExitApp);
     }
     public void goToActivityImages(View view) {
         String nombre = txtName.getText().toString();

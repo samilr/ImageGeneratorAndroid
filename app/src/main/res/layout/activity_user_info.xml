@@ -1,76 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnContinueImg"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:onClick="goToActivityImages"
-        android:text="Continuar"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+        android:layout_height="100dp"
+        android:background="@color/red">
 
-    <Button
-        android:id="@+id/btnGoBackToMain"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="¡Queremos conocerte!"
+            android:textSize="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white">
+        </TextView>
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="526dp"
+        android:layout_marginTop="110dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Cual es tu nombre?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:text="¿Con que genero te identidicas?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="50dp"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="220dp"
+            app:srcCompat="@drawable/menwomen" />
+
+        <RadioGroup
+            android:id="@+id/rbgGender"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="430dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbHombre"
+                android:layout_width="100dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="30dp"
+                android:text="Hombre" />
+
+            <RadioButton
+                android:id="@+id/rbMujer"
+                android:layout_width="100dp"
+                android:layout_height="26dp"
+                android:layout_marginLeft="40dp"
+                android:text="Mujer" />
+
+        </RadioGroup>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginTop="640dp"
-        android:onClick="goToMainActivity"
-        android:text="Volver atras"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+        android:background="@color/red">
 
-    <Button
-        android:id="@+id/btnExitAppFromInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="680dp"
-        android:onClick="ExitAppFromUserInfo"
-        android:text="Salir"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="212dp" />
+        <ImageView
+            android:id="@+id/imgContinue"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="330dp"
+            android:layout_weight="1"
+            android:onClick="goToActivityImages"
+            app:srcCompat="@drawable/right" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:text="Cual es tu nombre?" />
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="goToMainActivity"
+            app:srcCompat="@drawable/left" />
 
-    <EditText
-        android:id="@+id/txtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:textAlignment="center" />
+        <ImageView
+            android:id="@+id/imgExitApp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:onClick="ExitAppFromUserInfo"
+            app:srcCompat="@drawable/x" />
 
-    <RadioGroup
-        android:id="@+id/rbgGender"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="120dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/rbHombre"
-            android:layout_width="100dp"
-            android:layout_height="26dp"
-            android:text="Hombre" />
-
-        <RadioButton
-            android:id="@+id/rbMujer"
-            android:layout_width="100dp"
-            android:layout_height="26dp"
-            android:text="Mujer" />
-
-    </RadioGroup>
+    </FrameLayout>
 
 
 </FrameLayout>
