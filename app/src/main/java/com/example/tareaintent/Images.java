@@ -88,7 +88,7 @@ public class Images extends AppCompatActivity {
                 share.setType("image/jpeg");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-                String path = MediaStore.Images.Media.insertImage(getContentResolver(), b, "Frases para tu vida", null);
+                String path = MediaStore.Images.Media.insertImage(getContentResolver(), b, "Superacion", null);
                 Uri imageUri =  Uri.parse(path);
                 share.putExtra(Intent.EXTRA_STREAM, imageUri);
                 startActivity(Intent.createChooser(share, "Select"));
@@ -97,7 +97,7 @@ public class Images extends AppCompatActivity {
             case "reflexion":
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, txtSelected);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, txtSelected+"\n\n -Share from SG APP");
                 sendIntent.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
