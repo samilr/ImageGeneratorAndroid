@@ -82,10 +82,10 @@ public class Images extends AppCompatActivity {
     }
 
     public void shareImages(View view) {
+        Intent share = new Intent(Intent.ACTION_SEND);
         switch (selectionCategory) {
             case "superacion":
                 Bitmap b = BitmapFactory.decodeResource(getResources(),imgSelected);
-                Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("image/jpeg");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
@@ -96,11 +96,9 @@ public class Images extends AppCompatActivity {
                 break;
 
             case "reflexion":
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT,  "¡Hola! "+user+" quiere compartir esta reflexion contigo.        \n\n" + txtSelected+"\n\n -Share from SG APP");
-                sendIntent.setType("text/plain");
-                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                share.putExtra(Intent.EXTRA_TEXT,  "¡Hola! "+user+" quiere compartir esta reflexion contigo.        \n\n" + txtSelected+"\n\n -Share from SG APP");
+                share.setType("text/plain");
+                Intent shareIntent = Intent.createChooser(share, null);
                 startActivity(shareIntent);
                 break;
             default:
