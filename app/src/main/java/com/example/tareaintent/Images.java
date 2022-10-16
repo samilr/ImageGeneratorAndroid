@@ -23,7 +23,7 @@ public class Images extends AppCompatActivity {
     TextView tvName, tvFrases;
     ImageView imgV, imgShare;
     FrameLayout flSuperacion, flPhrases;
-    String gender, selectionCategory, txtSelected;
+    String gender, selectionCategory, txtSelected, user;
     int[] menPhrases, womenPhrases;
     String [] menRefletion, womenRefletion;
 
@@ -74,7 +74,8 @@ public class Images extends AppCompatActivity {
 
     public void getInfoFromUserInfo(){
         Bundle getName = getIntent().getExtras();
-        tvName.setText(getName.getString("nombre"));
+        user = getName.getString("nombre");
+        tvName.setText("Hola, " + user);
 
         Bundle getGender = getIntent().getExtras();
         gender = getGender.getString("gender");
@@ -97,7 +98,7 @@ public class Images extends AppCompatActivity {
             case "reflexion":
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, txtSelected+"\n\n -Share from SG APP");
+                sendIntent.putExtra(Intent.EXTRA_TEXT,  "¡Hola! "+user+" quiere compartir esta reflexion contigo.        \n\n" + txtSelected+"\n\n -Share from SG APP");
                 sendIntent.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);

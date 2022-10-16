@@ -92,24 +92,25 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="640dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="660dp"
         android:background="@color/red">
 
         <ImageView
             android:id="@+id/imgBack"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
+
             android:layout_weight="1"
             android:onClick="goToInfoActivityFromImg"
             app:srcCompat="@drawable/left" />
 
         <ImageView
             android:id="@+id/imgExitApp"
+            android:layout_marginTop="15dp"
             android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="155dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="152dp"
             android:layout_weight="1"
             android:onClick="ExitAppFromUserImg"
             app:srcCompat="@drawable/x" />

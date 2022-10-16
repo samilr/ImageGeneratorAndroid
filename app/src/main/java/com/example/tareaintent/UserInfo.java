@@ -47,7 +47,7 @@ public class UserInfo extends AppCompatActivity {
             String genderSelected = rbGender.getText().toString();
             Intent intent = new Intent(this, Images.class);
             intent.putExtra("gender",genderSelected);
-            intent.putExtra("nombre","Hola, "+nombre);
+            intent.putExtra("nombre",nombre);
             startActivity(intent);
         } else {
             Toast.makeText(this, "Complete todos los campos",
