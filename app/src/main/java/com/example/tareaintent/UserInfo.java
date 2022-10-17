@@ -25,10 +25,10 @@ public class UserInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
-        component();
+        appComponents();
     }
 
-    public void component(){
+    public void appComponents(){
         txtName = findViewById(R.id.txtName);
         rbgGender = findViewById(R.id.rbgGender);
         rbWomen = findViewById(R.id.rbMujer);
