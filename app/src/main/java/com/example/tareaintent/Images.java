@@ -1,26 +1,33 @@
 package com.example.tareaintent;
 
+import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import java.io.ByteArrayOutputStream;
 import java.util.Random;
 
 public class Images extends AppCompatActivity {
     ImageView imgBack, imgExit;
-    TextView tvName, tvFrases;
+    TextView tvName, tvFrases, tvGender;
     ImageView imgV, imgShare;
-    FrameLayout flSuperacion, flPhrases;
+    FrameLayout flName, flSuperacion, flPhrases, flMenu, flGender;
     String gender, selectionCategory, txtSelected, user;
     String [] menRefletion, womenRefletion;
     int[] menPhrases, womenPhrases;
@@ -33,17 +40,67 @@ public class Images extends AppCompatActivity {
         setContentView(R.layout.activity_images);
         appComponents();
         getInfoFromUserInfo();
+        colorByGender();
         dataPersonalSuperation();
+        tvGender.setText(gender);
+    }
+
+
+    public void colorByGender(){
+        Window window = this.getWindow();
+        switch (gender) {
+            case "Hombre":
+                flName.setBackgroundColor(getResources().getColor(R.color.blue));
+                flSuperacion.setBackgroundColor(getResources().getColor(R.color.blue));
+                flPhrases.setBackgroundColor(getResources().getColor(R.color.blue));
+                flMenu.setBackgroundColor(getResources().getColor(R.color.blue));
+                flGender.setBackgroundColor(getResources().getColor(R.color.blue));
+
+                imgV.setImageResource(R.drawable.predeterminadamen);
+                imgShare.setImageResource(R.drawable.sharemen);
+                tvFrases.setTextColor(getResources().getColor(R.color.blue));
+
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.blue));
+
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.blue)));
+                break;
+            case "Mujer":
+                flName.setBackgroundColor(getResources().getColor(R.color.pink));
+                flSuperacion.setBackgroundColor(getResources().getColor(R.color.pink));
+                flPhrases.setBackgroundColor(getResources().getColor(R.color.pink));
+                flMenu.setBackgroundColor(getResources().getColor(R.color.pink));
+                flGender.setBackgroundColor(getResources().getColor(R.color.pink));
+
+                imgV.setImageResource(R.drawable.predeterminadawomen);
+                imgShare.setImageResource(R.drawable.sharewomen);
+                tvFrases.setTextColor(getResources().getColor(R.color.pink));
+
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.pink));
+
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pink)));
+                break;
+            default:
+
+        }
     }
     public void appComponents(){
         tvName = findViewById(R.id.tvName);
         tvFrases = findViewById(R.id.tvFrases);
-        flPhrases = findViewById(R.id.flPhrases);
+        tvGender = findViewById(R.id.tvGender);
         imgV = findViewById(R.id.imgIMG);
         imgBack = findViewById(R.id.imgBack);
         imgExit = findViewById(R.id.imgExitApp);
         imgShare = findViewById(R.id.imgShare);
+        flPhrases = findViewById(R.id.flPhrases);
         flSuperacion = findViewById(R.id.flSuperacion);
+        flName = findViewById(R.id.flName);
+        flMenu = findViewById(R.id.flMenu);
+        flGender = findViewById(R.id.flGender);
+
 
         menPhrases = new int[]{R.drawable.sh1, R.drawable.sh2, R.drawable.sh3, R.drawable.sh4, R.drawable.sh5, R.drawable.sh6, R.drawable.sh7, R.drawable.sh8, R.drawable.sh9, R.drawable.sh10};
         womenPhrases = new int[]{R.drawable.s1, R.drawable.s2, R.drawable.s3, R.drawable.s4, R.drawable.s5, R.drawable.s6, R.drawable.s7, R.drawable.s8, R.drawable.s9, R.drawable.s10};
@@ -51,7 +108,6 @@ public class Images extends AppCompatActivity {
         imgShare.setVisibility(View.INVISIBLE);
         tvFrases.setVisibility(View.INVISIBLE);
         imgV.setImageResource(R.drawable.predeterminada);
-
     }
     public void getInfoFromUserInfo(){
         Bundle getName = getIntent().getExtras();

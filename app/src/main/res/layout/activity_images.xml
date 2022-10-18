@@ -65,6 +65,7 @@
 
 
     <FrameLayout
+        android:id="@+id/flName"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/red">
@@ -91,6 +92,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <FrameLayout
+        android:id="@+id/flMenu"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_marginTop="660dp"
@@ -116,6 +118,25 @@
             app:srcCompat="@drawable/x" />
 
     </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flGender"
+        android:layout_width="160dp"
+        android:layout_marginLeft="110dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="630dp"
+        android:background="@color/red">
+
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hombre"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </FrameLayout>
+
 
     <ImageView
         android:id="@+id/imgShare"
