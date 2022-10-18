@@ -44,8 +44,6 @@ public class Images extends AppCompatActivity {
         dataPersonalSuperation();
         tvGender.setText(gender);
     }
-
-
     public void colorByGender(){
         Window window = this.getWindow();
         switch (gender) {
@@ -100,7 +98,6 @@ public class Images extends AppCompatActivity {
         flName = findViewById(R.id.flName);
         flMenu = findViewById(R.id.flMenu);
         flGender = findViewById(R.id.flGender);
-
 
         menPhrases = new int[]{R.drawable.sh1, R.drawable.sh2, R.drawable.sh3, R.drawable.sh4, R.drawable.sh5, R.drawable.sh6, R.drawable.sh7, R.drawable.sh8, R.drawable.sh9, R.drawable.sh10};
         womenPhrases = new int[]{R.drawable.s1, R.drawable.s2, R.drawable.s3, R.drawable.s4, R.drawable.s5, R.drawable.s6, R.drawable.s7, R.drawable.s8, R.drawable.s9, R.drawable.s10};
