@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         appComponents();
     }
-
     public void appComponents(){
         imgContinue = findViewById(R.id.imgContinue);
         imgExit = findViewById(R.id.imgExitApp);

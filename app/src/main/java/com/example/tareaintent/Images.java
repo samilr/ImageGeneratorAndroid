@@ -35,7 +35,6 @@ public class Images extends AppCompatActivity {
         getInfoFromUserInfo();
         dataPersonalSuperation();
     }
-
     public void appComponents(){
         tvName = findViewById(R.id.tvName);
         tvFrases = findViewById(R.id.tvFrases);
@@ -54,7 +53,6 @@ public class Images extends AppCompatActivity {
         imgV.setImageResource(R.drawable.predeterminada);
 
     }
-
     public void getInfoFromUserInfo(){
         Bundle getName = getIntent().getExtras();
         user = getName.getString("nombre");
@@ -63,7 +61,6 @@ public class Images extends AppCompatActivity {
         Bundle getGender = getIntent().getExtras();
         gender = getGender.getString("gender");
     }
-
     public void shareImages(View view) {
         Intent share = new Intent(Intent.ACTION_SEND);
         switch (selectionCategory) {
@@ -88,12 +85,10 @@ public class Images extends AppCompatActivity {
                 imgV.setImageResource(R.drawable.sh1);
         }
     }
-
     public void goToInfoActivityFromImg(View view) {
         Intent intent = new Intent(this, UserInfo.class);
         startActivity(intent);
     }
-
     public void ShowPersonalPhrases(View view){
         selectionCategory = "superacion";
         tvFrases.setVisibility(View.INVISIBLE);
@@ -113,7 +108,6 @@ public class Images extends AppCompatActivity {
                 imgV.setImageResource(R.drawable.sh1);
         }
     }
-
     public void ShowLifeReflection(View view){
         selectionCategory = "reflexion";
         imgV.setVisibility(View.INVISIBLE);
@@ -133,7 +127,6 @@ public class Images extends AppCompatActivity {
                 imgV.setImageResource(R.drawable.sh1);
         }
     }
-
     public void ExitAppFromUserImg(View view) {
         final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("¿Estas seguro que quieres salir?")
@@ -149,7 +142,6 @@ public class Images extends AppCompatActivity {
         builder.create();
         builder.show();
     }
-
     public void dataPersonalSuperation(){
         menRefletion = new String[]{"¿Sabes cual es el hombre perfecto? \n No es aquel que tiene musculos, ni dinero, ni carro. Si no aquel que hace todo lo posible por 'Verte sonreir'.",
                 "Es una reflexion penosa para un hombre considerar lo que ha hecho, comparado con lo que debio hacer.",

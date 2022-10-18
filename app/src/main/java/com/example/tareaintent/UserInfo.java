@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.IntentCompat;
 
 public class UserInfo extends AppCompatActivity {
     RadioGroup rbgGender;
@@ -27,7 +25,6 @@ public class UserInfo extends AppCompatActivity {
         setContentView(R.layout.activity_user_info);
         appComponents();
     }
-
     public void appComponents(){
         txtName = findViewById(R.id.txtName);
         rbgGender = findViewById(R.id.rbgGender);
@@ -37,7 +34,6 @@ public class UserInfo extends AppCompatActivity {
         imgBack = findViewById(R.id.imgBack);
         imgExit = findViewById(R.id.imgExitApp);
     }
-
     public void goToActivityImages(View view) {
         String nombre = txtName.getText().toString();
 
@@ -54,15 +50,13 @@ public class UserInfo extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
         }
     }
-
     public void goToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
     public void ExitAppFromUserInfo(View view) {
         final  AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("¿Estas seguro que quieres salir?")
+        builder.setMessage("¿Esta seguro que quieres salir?")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finishAffinity();
