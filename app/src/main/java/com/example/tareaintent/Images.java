@@ -108,7 +108,7 @@ public class Images extends AppCompatActivity {
     public void getInfoFromUserInfo(){
         Bundle getName = getIntent().getExtras();
         user = getName.getString("nombre");
-        tvName.setText("Hola " + user);
+        tvName.setText("¡Hola " + user+"!");
 
         Bundle getGender = getIntent().getExtras();
         gender = getGender.getString("gender");
