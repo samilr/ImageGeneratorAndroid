@@ -13,11 +13,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.CollationElementIterator;
+
 public class UserInfo extends AppCompatActivity {
     RadioGroup rbgGender;
     RadioButton rbGender, rbMen, rbWomen;
     EditText txtName;
-    ImageView imgContinue, imgBack, imgExit;
+    ImageView imgContinue, imgBack, imgExit, imageGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,13 @@ public class UserInfo extends AppCompatActivity {
         imgContinue = findViewById(R.id.imgContinue);
         imgBack = findViewById(R.id.imgBack);
         imgExit = findViewById(R.id.imgExitApp);
+        imageGender = findViewById(R.id.imageGender);
+    }
+    public void changeGenderColorMen(View view) {
+       imageGender.setImageResource(R.drawable.mengender);
+    }
+    public void changeGenderColorWomen(View view) {
+        imageGender.setImageResource(R.drawable.womengender);
     }
     public void goToActivityImages(View view) {
         String nombre = txtName.getText().toString();
@@ -57,7 +66,6 @@ public class UserInfo extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
         }
     }
-
     public void goToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

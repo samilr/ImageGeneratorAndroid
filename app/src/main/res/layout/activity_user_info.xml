@@ -54,10 +54,10 @@
             android:textAlignment="center" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageGender"
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginTop="220dp"
             app:srcCompat="@drawable/menwomen" />
 
@@ -65,7 +65,7 @@
             android:id="@+id/rbgGender"
             android:layout_width="268dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="75dp"
+            android:layout_marginLeft="70dp"
             android:layout_marginTop="430dp"
             android:orientation="horizontal">
 
@@ -74,6 +74,7 @@
                 android:layout_width="100dp"
                 android:layout_height="26dp"
                 android:layout_marginRight="30dp"
+                android:onClick="changeGenderColorMen"
                 android:text="Hombre" />
 
             <RadioButton
@@ -81,6 +82,7 @@
                 android:layout_width="100dp"
                 android:layout_height="26dp"
                 android:layout_marginLeft="40dp"
+                android:onClick="changeGenderColorWomen"
                 android:text="Mujer" />
 
         </RadioGroup>
