@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Locale;
 import java.util.Random;
 
 public class Images extends AppCompatActivity {
@@ -40,7 +41,7 @@ public class Images extends AppCompatActivity {
         getInfoFromUserInfo();
         colorByGender();
         dataPersonalSuperation();
-        tvGender.setText(gender);
+        tvGender.setText(gender.toUpperCase());
     }
     public void colorByGender(){
         Window window = this.getWindow();

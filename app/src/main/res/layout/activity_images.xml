@@ -121,8 +121,8 @@
 
     <FrameLayout
         android:id="@+id/flGender"
-        android:layout_width="160dp"
-        android:layout_marginLeft="110dp"
+        android:layout_width="100dp"
+        android:layout_marginLeft="140dp"
         android:layout_height="30dp"
         android:layout_marginTop="630dp"
         android:background="@color/red">
@@ -131,7 +131,7 @@
             android:id="@+id/tvGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hombre"
+            android:text="HOMBRE"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp" />
