@@ -37,19 +37,27 @@ public class UserInfo extends AppCompatActivity {
     public void goToActivityImages(View view) {
         String nombre = txtName.getText().toString();
 
+
+
         if ((nombre.length() >= 1 && rbMen.isChecked()) || (nombre.length() >= 1 && rbWomen.isChecked())){
-            int gender = rbgGender.getCheckedRadioButtonId();
-            rbGender = findViewById(gender);
-            String genderSelected = rbGender.getText().toString();
-            Intent intent = new Intent(this, Images.class);
-            intent.putExtra("gender",genderSelected);
-            intent.putExtra("nombre",nombre);
-            startActivity(intent);
+            if (nombre.length() <= 11) {
+                int gender = rbgGender.getCheckedRadioButtonId();
+                rbGender = findViewById(gender);
+                String genderSelected = rbGender.getText().toString();
+                Intent intent = new Intent(this, Images.class);
+                intent.putExtra("gender",genderSelected);
+                intent.putExtra("nombre",nombre);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "El nombre no puede contener mas de 11 caracteres",
+                        Toast.LENGTH_LONG).show();
+            }
         } else {
             Toast.makeText(this, "Complete todos los campos",
                     Toast.LENGTH_LONG).show();
         }
     }
+
     public void goToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

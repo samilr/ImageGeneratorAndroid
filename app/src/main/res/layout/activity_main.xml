@@ -38,7 +38,7 @@
             android:text="Creamos esta aplicacion para que puedas encontrar frases de superacion personal o reflefexiones de vida. \n\n Obtendras una frase o reflexion basada en tu genero. \n\n ¡Esperamos que sea de gran ayuda!"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="30dp"></TextView>
+            android:textSize="28dp"></TextView>
     </FrameLayout>
 
 
