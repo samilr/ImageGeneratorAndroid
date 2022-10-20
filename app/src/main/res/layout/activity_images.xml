@@ -143,7 +143,7 @@
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginTop="384dp"
-        android:layout_marginLeft="175dp"
+        android:layout_marginLeft="165dp"
         android:onClick="shareImages"
         app:srcCompat="@drawable/sharebutton" />
 
